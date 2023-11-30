@@ -1,0 +1,41 @@
+// given an array of the fruits , youa are supposed to sort it in the lexicographical order using selection sort 
+
+public class Sortingprob2
+{
+    
+   static void selection(String[]fruits)
+    {
+        int n=fruits.length;
+        
+        for(int i =0;i<n-1;i++)
+        {
+            int min=i;
+            
+            for(int j=i+1;j<n;j++)
+            {
+                if(fruits[j].compareTo(fruits[min])<0)
+                {
+                    min=j;
+                }
+            }
+            /// swap min and fruits[i]
+            String temp=fruits[i];
+            fruits[i]=fruits[min];
+            fruits[min]=temp;
+        }
+    }
+ 
+    public static void main(String[] args)
+    {
+        String[] fruits = {"mango","papaya","apple","banana","litchi"};
+        
+        selection(fruits);
+        
+        for(String val:fruits)
+        {
+            System.out.print(val+" ");
+            
+        }
+        
+        }
+    }
